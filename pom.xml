@@ -17,6 +17,7 @@
     <selenium.version>4.28.1</selenium.version>
     <testng.version>7.8.0</testng.version>
     <webdrivermanager.version>5.4.0</webdrivermanager.version>
+    <extendreports.version>5.1.1</extendreports.version>
   </properties>
 
   <dependencies>
@@ -40,6 +41,13 @@
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
       <version>${webdrivermanager.version}</version>
+    </dependency>
+
+    <!-- Extent Reports for HTML Reporting -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>${extendreports.version}</version>
     </dependency>
 
     <!-- Jackson (optional: JSON vs parsing if necessary) -->
