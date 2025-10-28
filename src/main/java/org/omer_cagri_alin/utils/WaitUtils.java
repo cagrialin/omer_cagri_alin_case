@@ -1,7 +1,6 @@
 package org.omer_cagri_alin.utils;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,9 +23,11 @@ public class WaitUtils {
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public void waitForPageToLoad() {
-        wait.until((ExpectedCondition<Boolean>) wd ->
-                ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
+    public void waitForSeconds(long seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }
-

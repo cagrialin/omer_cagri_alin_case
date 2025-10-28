@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Insider QA Jobs Suite">
+    <test name="QA Jobs Tests">
+        <classes>
+            <class name="org.omer_cagri_alin.tests.QAJobsTest"/>
+        </classes>
+    </test>
+</suite>
