@@ -15,12 +15,12 @@ The project follows the **Page Object Model (POM)** design pattern — every pag
 
 ## 🚀 Features & Scenarios
 
-| Test Case | Description                                                                                                                |
-|------------|----------------------------------------------------------------------------------------------------------------------------|
-| **1️⃣ openHomePage_checkOpened** | Opens BASE_URL’s homepage and verifies the correct URL.                                                                    |
-| **2️⃣ navigateToCareers_checkSections** | Navigates to the page and verifies visibility of “VALUE1”, “VALUE2”, and “VALUE3” sections.                                |
-| **3️⃣ openQAList_filterAndCheckJobs** | Navigates to the jobs page, filters jobs by *OPTION1* and *OPTİON2*, and verifies all listed jobs in Location. |
-| **4️⃣ clickViewRole_redirectsToLever** | Clicks on “BUTTON” for the first job and verifies the redirect to portal.                                                  |
+| Test Case | Description                                                                                                |
+|------------|------------------------------------------------------------------------------------------------------------|
+| **1️⃣ openHomePage_checkOpened** | Opens BASE_URL’s homepage and verifies the correct URL.                                                    |
+| **2️⃣ navigateToCareers_checkSections** | Navigates to the page and verifies visibility of “VALUE1”, “VALUE2”, and “VALUE3” sections.                |
+| **3️⃣ openQAList_filterAndCheckJobs** | Navigates to the jobs page, filters jobs by "OPTION1" and "OPTION2", and verifies all listed jobs in Location. |
+| **4️⃣ clickViewRole_redirectsToLever** | Clicks on “BUTTON” for the first job and verifies the redirect to portal.                                  |
 
 ---
 
@@ -105,6 +105,7 @@ This project was developed following:
 ### **1. Clone the project**
 ```bash
 git clone https://github.com/yourusername/omer_cagri_alin_case.git
+
 cd omer_cagri_alin_case
 
 mvn clean install
