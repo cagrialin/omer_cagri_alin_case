@@ -2,7 +2,6 @@ package org.omer_cagri_alin.tests;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import org.omer_cagri_alin.pages.*;
 import org.omer_cagri_alin.utils.DriverFactory;
 import org.omer_cagri_alin.utils.ExtentLogger;
