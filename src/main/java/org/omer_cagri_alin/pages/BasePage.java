@@ -21,10 +21,6 @@ public abstract class BasePage {
         element(locator).click();
     }
 
-    protected String getText(By locator) {
-        return element(locator).getText().trim();
-    }
-
     protected boolean isDisplayed(By locator) {
         try {
             return element(locator).isDisplayed();
@@ -33,13 +29,31 @@ public abstract class BasePage {
         }
     }
 
-    /**
-     * Opens a long Select2 dropdown, scrolls inside it if needed, and selects the target option.
-     * Works best for UI tests where dropdown behavior must be simulated.
-     * Created with the help of ChatGPT AI.
-     * @param openerLocator   locator of the dropdown (visible selection span)
-     * @param optionText      the visible text of the option to click
-     */
+    protected void scrollUntilElementVisible(By locator, int maxScrollAttempts) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        for (int i = 0; i < maxScrollAttempts; i++) {
+            try {
+                WebElement el = driver.findElement(locator);
+                if (el.isDisplayed()) {
+                    js.executeScript("arguments[0].scrollIntoView({block: 'center'});", el);
+                    return; // element found and visible
+                }
+            } catch (NoSuchElementException ignored) {
+            }
+
+            // Scroll down incrementally
+            js.executeScript("window.scrollBy(0, 400);");
+            wait.waitForSeconds(1);
+        }
+
+        throw new RuntimeException("Element not found after " + maxScrollAttempts + " scroll attempts: " + locator);
+    }
+
+    // Opens a long Select2 dropdown, scrolls inside it if needed, and selects the target option.
+    // Works best for UI tests where dropdown behavior must be simulated.
+    // Created with the help of ChatGPT AI.
+
     protected void selectFromLongDropdown(By openerLocator, String optionText) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 

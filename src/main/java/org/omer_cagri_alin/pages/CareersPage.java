@@ -16,16 +16,25 @@ public class CareersPage extends BasePage {
         super(driver);
     }
 
-    // Location block visible
-    public boolean isLocationsVisible() {
-        return isDisplayed(locationsBlock);
-    }
     // Teams block visible
     public boolean isTeamsVisible() {
+        scrollUntilElementVisible(locationsBlock,8);
+        wait.waitForSeconds(2);
         return isDisplayed(teamsBlock);
     }
+
+    // Location block visible
+    public boolean isLocationsVisible() {
+        scrollUntilElementVisible(teamsBlock, 8);
+        wait.waitForSeconds(2);
+        return isDisplayed(locationsBlock);
+
+    }
+
     // Life at Insider block visible
     public boolean isLifeAtInsiderVisible() {
+        scrollUntilElementVisible(lifeAtInsiderBlock,8);
+        wait.waitForSeconds(2);
         return isDisplayed(lifeAtInsiderBlock);
     }
 
